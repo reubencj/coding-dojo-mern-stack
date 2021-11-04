@@ -1,1 +1,2 @@
-These are the projects and assignment I did for the Coding Dojo MERN stack. 
+These are the projects and assignment I did for the Coding Dojo MERN stack.
+React apps and more.

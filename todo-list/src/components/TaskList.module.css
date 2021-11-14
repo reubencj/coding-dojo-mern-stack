@@ -1,0 +1,43 @@
+.taskStyle {
+  font-family: "Lato", sans-serif;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  font-size: 30px;
+
+  margin: 5px 35%;
+}
+
+.completed {
+  color: rgb(163, 158, 158);
+  text-decoration-line: line-through;
+}
+
+.notComplete {
+  color: #eeeeee;
+  font-weight: bold;
+}
+
+.deleteBtnStyle {
+  background-color: #e94560;
+  color: white;
+  border-radius: 5px;
+  border-style: none;
+  font-size: 20px;
+  height: 30px;
+  align-self: center;
+  position: relative;
+  bottom: 7px;
+}
+
+.deleteBtnStyle:hover {
+  background-color: #9e2338;
+}
+
+.checkboxStyle {
+  height: 25px;
+  width: 30px;
+
+  margin-right: 15px;
+  align-self: center;
+}

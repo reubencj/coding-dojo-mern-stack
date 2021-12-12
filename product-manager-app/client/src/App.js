@@ -1,11 +1,14 @@
 import "./App.css";
-import ProductForm from "./components/ProductForm";
+import Main from "./views/Main";
+import { Router } from "@reach/router";
+import ProductDetails from "./components/ProductDetail";
 
 function App() {
   return (
-    <div className="App">
-      <ProductForm />
-    </div>
+    <Router>
+      <Main path="/" />
+      <ProductDetails path="/:id" />
+    </Router>
   );
 }
 

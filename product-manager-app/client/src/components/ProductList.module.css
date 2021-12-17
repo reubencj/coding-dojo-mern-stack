@@ -1,0 +1,27 @@
+.listStyle {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 30%;
+  justify-content: space-between;
+}
+
+h1 {
+  text-align: center;
+}
+
+li {
+  margin-top: 10px;
+}
+button {
+  margin-left: 10px;
+}
+
+.update {
+  background-color: rgb(13, 13, 201);
+  color: white;
+}
+
+.delete {
+  background-color: red;
+  color: white;
+}

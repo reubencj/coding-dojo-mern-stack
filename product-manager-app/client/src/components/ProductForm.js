@@ -3,9 +3,9 @@ import axios from "axios";
 import Styles from "./ProductForm.module.css";
 
 const ProductForm = (props) => {
-  const [title, setTitle] = useState();
-  const [price, setPrice] = useState();
-  const [description, setDescription] = useState();
+  const [title, setTitle] = useState("");
+  const [price, setPrice] = useState("");
+  const [description, setDescription] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,7 +15,7 @@ const ProductForm = (props) => {
         price: price,
         description: description,
       })
-      .then((res) => console.log(res))
+      .then((res) => props.handleToggle())
       .catch((err) => console.log(err));
 
     console.log({ title, price, description });

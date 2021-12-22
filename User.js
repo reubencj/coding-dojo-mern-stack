@@ -7,15 +7,18 @@ class User {
 
   makeDeposit(amount) {
     this.amount += amount;
+    return this;
   }
 
   makeWithdrawal(amount) {
     this.amount -= amount;
+    return this;
   }
 
   transferMoney(otherUser, amount) {
     this.makeWithdrawal(amount);
     otherUser.makeDeposit(amount);
+    return this;
   }
   displayBalance() {
     console.log(`User: ${this.name} \nBalance: ${this.amount} `);
@@ -31,3 +34,5 @@ const karen = new User("Karen John", "karen@gmail.com");
 reuben.transferMoney(karen, 500);
 reuben.displayBalance();
 karen.displayBalance();
+reuben.makeDeposit(2000).makeDeposit(3000).makeWithdrawal(1000);
+reuben.displayBalance();

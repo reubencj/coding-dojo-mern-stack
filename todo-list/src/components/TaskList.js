@@ -3,6 +3,7 @@ import styles from "./TaskList.module.css";
 
 const TaskList = (props) => {
   const { tasks } = props;
+  //{id: 30943840, taskName: finsishi, completed: false}, complete: true
 
   const handleCheck = (checkValue, taskData) => {
     if (checkValue) {
@@ -32,6 +33,7 @@ const TaskList = (props) => {
                 value={true}
                 onChange={(event) => handleCheck(event.target.checked, task)}
                 className={styles.checkboxStyle}
+                checked={task.completed}
               />
               <button
                 onClick={() => handleDelete(task)}

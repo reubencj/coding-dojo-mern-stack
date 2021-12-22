@@ -1,6 +1,7 @@
 import React, { useReducer } from "react";
 import styles from "./Form.module.css";
 
+//initial value of state
 const initialState = {
   firstName: {
     value: "",
@@ -17,6 +18,7 @@ const initialState = {
 };
 
 const validateInput = (type, value) => {
+  //function to validate if the user input has a valid name or email
   let validName = /^[A-Za-z]+$/;
   let validEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
@@ -30,6 +32,9 @@ const validateInput = (type, value) => {
 };
 
 const reducer = (state, action) => {
+  //reducer function which is used to update the state
+  //copy the existing state and the overide existing key with the changed key.
+  //action has two properties type and payload. Type is the action you would want to do, in this case is the key. Payload is the data you want to pass
   return { ...state, [action.type]: action.payload };
 };
 
@@ -37,6 +42,9 @@ const Form = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const handleInput = (e) => {
+    /*funtion used in the event handler. it takes name from the target property of the event object and 
+    assigns it to the the action variable. The action variable is used for the dispatch function used to make the changes to state. 
+    this is similar to the useState function which is used to rerender the app */
     const { name, value } = e.target;
     const noError = validateInput(name, value);
     const action = {
@@ -59,11 +67,15 @@ const Form = () => {
         id="firstName"
         onChange={(e) => handleInput(e)}
       />
-      {state.firstName.noError === false && (
-        <p className={styles.error}>
-          First name must be letters with no spaces
-        </p>
-      )}
+
+      {
+        //handle the error messages
+        state.firstName.noError === false && (
+          <p className={styles.error}>
+            First name must be letters with no spaces
+          </p>
+        )
+      }
 
       <label htmlFor="lastName">Last Name</label>
       <input
